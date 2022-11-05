@@ -1,6 +1,6 @@
-# Sample AEM project template
+# AniShare AEM Implementation
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+Project to test various aem 6.5 features with best practices.
 
 ## Modules
 
