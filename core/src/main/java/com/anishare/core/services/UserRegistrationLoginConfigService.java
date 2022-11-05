@@ -7,7 +7,7 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 @ObjectClassDefinition(name = "userRegistrationLoginConfig",
         description = "Config for User Registration and Login Services.")
-public interface UserRegistrationLoginConfigService {
+public @interface UserRegistrationLoginConfigService {
 
     @AttributeDefinition(name = "Enable config",
             description = "This property indicates whether the configuration values will taken into account or not.",

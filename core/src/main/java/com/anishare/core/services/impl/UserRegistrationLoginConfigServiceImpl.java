@@ -7,6 +7,7 @@ import org.osgi.service.metatype.annotations.Designate;
 
 import java.lang.annotation.Annotation;
 
+
 @Component(service = UserRegistrationLoginConfigService.class, immediate = true)
 @Designate(ocd = UserRegistrationLoginConfigService.class)
 public class UserRegistrationLoginConfigServiceImpl implements UserRegistrationLoginConfigService {
@@ -29,4 +30,8 @@ public class UserRegistrationLoginConfigServiceImpl implements UserRegistrationL
         return userRegistrationLoginConfigService.usersJsonLocation();
     }
 
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
+    }
 }
