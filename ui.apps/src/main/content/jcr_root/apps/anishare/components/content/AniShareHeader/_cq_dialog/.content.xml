@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Header"
     sling:resourceType="cq/gui/components/authoring/dialog">
@@ -9,36 +9,141 @@
         <items jcr:primaryType="nt:unstructured">
             <tabs
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/tabs"
-                maximized="{Boolean}true">
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
                 <items jcr:primaryType="nt:unstructured">
-                    <properties
+                    <logo
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Properties"
+                        jcr:title="Logo"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <columns
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                                margin="{Boolean}true">
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                                 <items jcr:primaryType="nt:unstructured">
                                     <column
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <title
+                                            <text
                                                 jcr:primaryType="nt:unstructured"
+                                                jcr:title="aniShareHeader"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="Leave empty to use the page title."
-                                                fieldLabel="Title"
-                                                name="./jcr:title"/>
+                                                fieldDescription="alt text for image"
+                                                fieldLabel="text"
+                                                name="./altText"/>
+                                            <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Logo Image"
+                                                name="./image"
+                                                rootPath="/content/dam/anishare"/>
                                         </items>
                                     </column>
                                 </items>
                             </columns>
                         </items>
-                    </properties>
+                    </logo>
+                    <season
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="seasons"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <seasons
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Seasons">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./multiSeasons">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <text
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="year and season of anime"
+                                                                    fieldLabel="Year and Season of Anime"
+                                                                    name="./yearAndSeason"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </seasons>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </season>
+                    <CTAButtons
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Action Buttons"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <buttons
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./ctaButtons">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <buttonText
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="Text which appears below icon"
+                                                                    fieldLabel="Button Text"
+                                                                    name="./btnText"/>
+                                                                <image
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                    fieldLabel="Button Icon"
+                                                                    name="./btnIcon"
+                                                                    rootPath="/content/dam/anishare"/>
+                                                                <altTextForBtnIcon
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="Alt text for button Icon"
+                                                                    fieldLabel="Button Alt text"
+                                                                    name="./btnIconAlt"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </buttons>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </CTAButtons>
                 </items>
             </tabs>
         </items>
