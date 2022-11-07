@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:referenceable",
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "a622c11c-2146-4462-9100-3e6f81bce3a2",
+  "jcr:predecessors": [
+    "d68ff9cc-d85b-45e0-98bd-b5fa66935d82"
+  ],
+  "jcr:created": "Sat Oct 29 2022 12:21:41 GMT+0530",
+  "jcr:baseVersion": "d68ff9cc-d85b-45e0-98bd-b5fa66935d82",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "4aeffe15-1c4e-4781-9a18-ef0c6c960b8d",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "cq:lastReplicationAction": "Deactivate",
+    "cq:lastReplicatedBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "cq:lastReplicated": "Sat Oct 29 2022 12:27:54 GMT+0530",
+    "dam:assetState": "processed",
+    "cq:name": "website-home-logo.png",
+    "jcr:lastModified": "Sat Oct 29 2022 12:25:00 GMT+0530",
+    "cq:parentPath": "/content/dam/anishare/english/logos",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Sat Oct 29 2022 12:21:41 GMT+0530",
+      "cq5dam.web.1280.1280.png": {
+        "jcr:primaryType": "nt:file",
+        "jcr:createdBy": "workflow-process-service",
+        "jcr:created": "Sat Oct 29 2022 12:21:42 GMT+0530",
+        "jcr:content": {
+          "jcr:primaryType": "oak:Resource",
+          "jcr:lastModifiedBy": "workflow-process-service",
+          "jcr:mimeType": "image/png",
+          "jcr:lastModified": "Sat Oct 29 2022 12:21:42 GMT+0530",
+          ":jcr:data": 10953
+        }
+      },
+      "cq5dam.thumbnail.48.48.png": {
+        "jcr:primaryType": "nt:file",
+        "jcr:mixinTypes": [
+          "mix:title"
+        ],
+        "jcr:createdBy": "workflow-process-service",
+        "jcr:title": "smallThumbnail",
+        "jcr:created": "Sat Oct 29 2022 12:21:42 GMT+0530",
+        "jcr:content": {
+          "jcr:primaryType": "oak:Resource",
+          "jcr:lastModifiedBy": "workflow-process-service",
+          "jcr:mimeType": "image/png",
+          "jcr:lastModified": "Sat Oct 29 2022 12:21:42 GMT+0530",
+          ":jcr:data": 1595
+        }
+      },
+      "cq5dam.thumbnail.140.100.png": {
+        "jcr:primaryType": "nt:file",
+        "jcr:createdBy": "workflow-process-service",
+        "jcr:created": "Sat Oct 29 2022 12:21:42 GMT+0530",
+        "jcr:content": {
+          "jcr:primaryType": "oak:Resource",
+          "jcr:lastModifiedBy": "workflow-process-service",
+          "jcr:mimeType": "image/png",
+          "jcr:lastModified": "Sat Oct 29 2022 12:21:42 GMT+0530",
+          ":jcr:data": 3538
+        }
+      },
+      "original": {
+        "jcr:primaryType": "nt:file",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Sat Oct 29 2022 12:21:41 GMT+0530",
+        "jcr:content": {
+          "jcr:primaryType": "oak:Resource",
+          "jcr:lastModifiedBy": "admin",
+          "jcr:mimeType": "image/png",
+          "jcr:lastModified": "Sat Oct 29 2022 12:25:00 GMT+0530",
+          ":jcr:data": 10910
+        }
+      },
+      "cq5dam.thumbnail.319.319.png": {
+        "jcr:primaryType": "nt:file",
+        "jcr:createdBy": "workflow-process-service",
+        "jcr:created": "Sat Oct 29 2022 12:21:42 GMT+0530",
+        "jcr:content": {
+          "jcr:primaryType": "oak:Resource",
+          "jcr:lastModifiedBy": "workflow-process-service",
+          "jcr:mimeType": "image/png",
+          "jcr:lastModified": "Sat Oct 29 2022 12:21:42 GMT+0530",
+          ":jcr:data": 10424
+        }
+      }
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:Physicalheightininches": "-1.0",
+      "dam:Physicalwidthininches": "-1.0",
+      "dam:Fileformat": "PNG",
+      "dam:Progressive": "no",
+      "tiff:ImageLength": 48,
+      "jcr:lastModifiedBy": "admin",
+      "dam:extracted": "Sat Oct 29 2022 12:21:41 GMT+0530",
+      "dc:format": "image/png",
+      "dc:description": "Main website logo",
+      "dam:Bitsperpixel": 32,
+      "dam:MIMEtype": "image/png",
+      "dam:Physicalwidthindpi": -1,
+      "dam:Physicalheightindpi": -1,
+      "dc:modified": "Sat Oct 29 2022 12:25:00 GMT+0530",
+      "dam:Numberofimages": 1,
+      "jcr:lastModified": "Sat Oct 29 2022 12:25:00 GMT+0530",
+      "dam:Numberoftextualcomments": 0,
+      "tiff:ImageWidth": 48,
+      "dam:sha1": "5a3a56ed34ecbedfc6acf663a98a5f53fa6415d1",
+      "dam:size": 9619,
+      "dc:title": "MainWebsiteLogo"
+    }
+  }
+}
