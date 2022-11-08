@@ -2,4 +2,36 @@
   data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
   data-sly-call="${clientlib.all @ categories=['anishare.header']}"
 />
-<h1 data-sly-test="${properties.jcr:title}">${properties.jcr:title}</h1>
+<!--/*Properies based impl */-->
+<!--/* <div class="parent"> 
+  <div class="header-logo">
+    <img src="${properties.image}" alt="${properties.altText}" />
+  </div>
+  <div data-sly-list.child="${resource.getChildren}">
+    <div data-sly-test="${child.name == 'multiSeasons'}">
+      <div data-sly-list.season="${child.getChildren}">
+        <div>${season.yearAndSeason}</div>
+      </div>
+    </div>
+  </div>
+  <div class="header-btns"></div>
+</div> */-->
+<!--/*Sling Model based impl */-->
+<div class="parent">
+  <div
+    class="header-logo d-flex"
+    data-sly-use.header="${'com.anishare.core.models.AniShareHeader' @ renditonName = 'cq5dam.thumbnail.48.48.png'}"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${!header.empty}"
+  >
+    <img src="${header.imageRendition}" alt="${header.altText}" />
+
+    <div data-sly-list.season="${header.seasons}">
+      <div>${season}</div>
+    </div>
+    <div class="header-btns"></div>
+  </div>
+</div>
+<sly
+  data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}"
+/>

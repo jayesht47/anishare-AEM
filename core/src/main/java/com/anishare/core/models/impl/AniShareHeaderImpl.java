@@ -11,6 +11,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
@@ -44,6 +45,7 @@ public class AniShareHeaderImpl implements AniShareHeader {
     private ResourceResolver resolver;
 
     @ValueMapValue
+    @Required
     private String altText;
 
     @RequestAttribute

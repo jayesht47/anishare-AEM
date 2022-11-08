@@ -5,3 +5,15 @@
 html {
   font-family: "Roboto", sans-serif;
 }
+
+/* Global colors */
+
+:root {
+  --anishare-primary: #1b262c;
+  --anishare-secondary: #0f4c75;
+  --anishare-accent: #bbe1fa;
+}
+
+html {
+  background-color: var(--anishare-primary);
+}
