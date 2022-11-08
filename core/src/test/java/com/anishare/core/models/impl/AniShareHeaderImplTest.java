@@ -69,4 +69,14 @@ public class AniShareHeaderImplTest {
         Assertions.assertFalse(aniShareHeader.isEmpty());
     }
 
+    /**
+     * Testing if Model is instantiated without required param.
+     */
+    @Test
+    void testInitWithoutAltText(){
+        ctx.currentResource("/content/AniShareHeaderWithoutAltText");
+        AniShareHeader aniShareHeader = ctx.request().adaptTo(AniShareHeader.class);
+        Assertions.assertNull(aniShareHeader);
+    }
+
 }

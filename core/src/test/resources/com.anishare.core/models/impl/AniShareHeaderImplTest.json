@@ -39,5 +39,25 @@
         "yearAndSeason": "Summer 1999"
       }
     }
+  },
+  "AniShareHeaderWithoutAltText": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "anishare/components/content/AniShareHeader",
+    "multiSeasons": {
+      "jcr:primaryType": "nt:unstructured",
+      "item0": {
+        "jcr:primaryType": "nt:unstructured",
+        "yearAndSeason": "Winter 2023"
+      },
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "yearAndSeason": "Spring 2023"
+      },
+      "item2": {
+        "jcr:primaryType": "nt:unstructured",
+        "yearAndSeason": "Summer 1999"
+      }
+    }
   }
+
 }
