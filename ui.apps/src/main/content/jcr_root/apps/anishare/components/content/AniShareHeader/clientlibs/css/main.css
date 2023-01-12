@@ -1,3 +1,28 @@
 h1 {
   color: white;
 }
+
+.anishareHeader {
+  display: flex;
+  justify-content: space-around;
+}
+
+.anishareHeader__seasons{
+  display: flex;
+}
+
+.anishareHeader__seasons__oneSeason{
+  display: flex;
+}
+
+.anishareHeader__seasons__oneSeason__seasonsName_text {
+  margin: 0 1em;
+  color: #9699b4;
+}
+
+.anishareHeader__seasons__oneSeason__seasonsYear_text {
+  margin: 0 1em;
+  color: #9699b4;
+}
+
+
