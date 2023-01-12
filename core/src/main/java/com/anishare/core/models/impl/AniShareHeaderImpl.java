@@ -3,7 +3,6 @@ package com.anishare.core.models.impl;
 import com.anishare.core.models.AniShareHeader;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.Rendition;
-import com.drew.lang.annotations.NotNull;
 import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -12,16 +11,13 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
-import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.models.annotations.injectorspecific.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 @Model(
@@ -54,20 +50,23 @@ public class AniShareHeaderImpl implements AniShareHeader {
 
 
     @Override
-    public List<String> getSeasons() {
-        List<String> yearAndSeason = new ArrayList<>();
+    public List<List<String>> getSeasons() {
+        List<List<String>> yearAndSeason = new ArrayList<>();
         try {
             Resource multiSeasons = compResource.getChild("multiSeasons");
+            assert multiSeasons != null;
             for (Resource child : multiSeasons.getChildren()) {
-                yearAndSeason.add(child.getValueMap().get("yearAndSeason", String.class));
+                List<String> oneSeasonYear = new ArrayList<>();
+                String seasonName = child.getValueMap().get("seasonName", String.class);
+                String seasonYear = child.getValueMap().get("seasonYear", String.class);
+                oneSeasonYear.add(seasonName);
+                oneSeasonYear.add(seasonYear);
+                yearAndSeason.add(oneSeasonYear);
             }
-        }
-        catch (NullPointerException npe)
-        {
-            logger.error("NullPointerException occurred while fetching seasons details :: {}", npe);
-        }
-        catch (Exception e) {
-            logger.error("Exception occurred while fetching seasons details :: {}", e);
+        } catch (NullPointerException npe) {
+            logger.error("NullPointerException occurred while fetching seasons details :: {}", npe.toString());
+        } catch (Exception e) {
+            logger.error("Exception occurred while fetching seasons details :: {}", e.toString());
         }
         return yearAndSeason;
     }
@@ -82,7 +81,8 @@ public class AniShareHeaderImpl implements AniShareHeader {
         String imageRenditionPath = StringUtils.EMPTY;
         try {
             if (image != null && !image.isEmpty()) {
-                Asset imageAsset = resolver.getResource(image).adaptTo(Asset.class);
+                Asset imageAsset = Objects.requireNonNull(resolver.getResource(image)).adaptTo(Asset.class);
+                assert imageAsset != null;
                 for (Rendition rendition : imageAsset.getRenditions()) {
 
                     if (rendition.getName().startsWith(renditonName)) {
@@ -94,7 +94,7 @@ public class AniShareHeaderImpl implements AniShareHeader {
                 throw new IllegalStateException("Image is not configured");
 
         } catch (Exception e) {
-            logger.error("Error occurred while fetching correct image rendition :: {}", e);
+            logger.error("Error occurred while fetching correct image rendition :: {}", e.toString());
         }
         return imageRenditionPath;
     }

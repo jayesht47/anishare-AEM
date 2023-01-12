@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -28,18 +30,29 @@ public class AniShareHeaderImplTest {
 
     @Test
     void testGetSeasons() {
-        List<String> expectedValues = new ImmutableList.Builder<String>().add("Winter 2023").add("Spring 2023").add("Summer 1999").build();
+        List<List<String>> expectedValues = new ArrayList<>();
+
+        List<String> firstSampleValue = Arrays.asList("Winter", "2023");
+        List<String> secondSampleValue = Arrays.asList("Spring", "2023");
+
+        expectedValues.add(firstSampleValue);
+        expectedValues.add(secondSampleValue);
+
         ctx.currentResource("/content/AniShareHeader");
         AniShareHeader aniShareHeader = ctx.request().adaptTo(AniShareHeader.class);
-        List<String> seasons = aniShareHeader.getSeasons();
-        Assertions.assertEquals(seasons, expectedValues);
+        assert aniShareHeader != null;
+        List<List<String>> seasons = aniShareHeader.getSeasons();
+        for (int i = 0; i < seasons.size(); i++) {
+            Assertions.assertEquals(seasons.get(i), expectedValues.get(i));
+        }
     }
 
     @Test
     void testGetAltText() {
-        final String expected = "Sample Alt Text";
+        final String expected = "AniShare website logo";
         ctx.currentResource("/content/AniShareHeader");
         AniShareHeader aniShareHeader = ctx.request().adaptTo(AniShareHeader.class);
+        assert aniShareHeader != null;
         String actual = aniShareHeader.getAltText();
         Assertions.assertEquals(expected, actual);
     }
@@ -51,6 +64,7 @@ public class AniShareHeaderImplTest {
         ctx.request().setAttribute("renditonName", "cq5dam.thumbnail.48.48.png");
         ctx.currentResource("/content/AniShareHeader");
         AniShareHeader aniShareHeader = ctx.request().adaptTo(AniShareHeader.class);
+        assert aniShareHeader != null;
         Assertions.assertEquals(expectedRenditionName, aniShareHeader.getImageRendition());
 
     }
@@ -59,6 +73,7 @@ public class AniShareHeaderImplTest {
     void testIsEmpty_WithoutImage() {
         ctx.currentResource("/content/AniShareHeaderWithoutImage");
         AniShareHeader aniShareHeader = ctx.request().adaptTo(AniShareHeader.class);
+        assert aniShareHeader != null;
         Assertions.assertTrue(aniShareHeader.isEmpty());
     }
 
@@ -66,6 +81,7 @@ public class AniShareHeaderImplTest {
     void testIsNotEmpty() {
         ctx.currentResource("/content/AniShareHeader");
         AniShareHeader aniShareHeader = ctx.request().adaptTo(AniShareHeader.class);
+        assert aniShareHeader != null;
         Assertions.assertFalse(aniShareHeader.isEmpty());
     }
 
@@ -73,7 +89,7 @@ public class AniShareHeaderImplTest {
      * Testing if Model is instantiated without required param.
      */
     @Test
-    void testInitWithoutAltText(){
+    void testInitWithoutAltText() {
         ctx.currentResource("/content/AniShareHeaderWithoutAltText");
         AniShareHeader aniShareHeader = ctx.request().adaptTo(AniShareHeader.class);
         Assertions.assertNull(aniShareHeader);

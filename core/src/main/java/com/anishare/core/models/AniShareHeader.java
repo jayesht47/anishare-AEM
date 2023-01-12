@@ -5,7 +5,7 @@ import java.util.List;
 public interface AniShareHeader {
 
 
-    List<String> getSeasons();
+    List<List<String>> getSeasons();
 
     String getImageRendition();
 

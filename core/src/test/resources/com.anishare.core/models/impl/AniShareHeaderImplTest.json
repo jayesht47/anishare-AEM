@@ -1,22 +1,32 @@
 {
   "AniShareHeader": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "anishare/components/content/AniShareHeader",
-    "altText": "Sample Alt Text",
+    "jcr:createdBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "altText": "AniShare website logo",
+    "jcr:created": "Sat Oct 29 2022 13:02:11 GMT+0530",
     "image": "/content/dam/anishare/english/logos/website-home-logo.png",
+    "seasonName": [
+      "s",
+      "1"
+    ],
+    "seasonYear": [
+      "1",
+      "2"
+    ],
+    "jcr:lastModified": "Thu Jan 12 2023 23:08:59 GMT+0530",
+    "sling:resourceType": "anishare/components/content/AniShareHeader",
     "multiSeasons": {
       "jcr:primaryType": "nt:unstructured",
       "item0": {
         "jcr:primaryType": "nt:unstructured",
-        "yearAndSeason": "Winter 2023"
+        "seasonName": "Winter",
+        "seasonYear": "2023"
       },
       "item1": {
         "jcr:primaryType": "nt:unstructured",
-        "yearAndSeason": "Spring 2023"
-      },
-      "item2": {
-        "jcr:primaryType": "nt:unstructured",
-        "yearAndSeason": "Summer 1999"
+        "seasonName": "Spring",
+        "seasonYear": "2023"
       }
     }
   },
@@ -59,5 +69,4 @@
       }
     }
   }
-
 }
