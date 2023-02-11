@@ -1,6 +1,6 @@
 <sly
-        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-        data-sly-call="${clientlib.all @ categories=['anishare.header']}"
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.all @ categories=['anishare.header']}"
 />
 <!--/*Properies based impl */-->
 <!--/* <div class="parent"> 
@@ -19,22 +19,19 @@
 <!--/*Sling Model based impl */-->
 <div class="parent">
   <div
-          data-sly-use.header="${'com.anishare.core.models.AniShareHeader' @ renditonName = 'cq5dam.thumbnail.48.48.png'}"
-          data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
-          data-sly-test.hasContent="${!header.empty}"
-          class="header-logo anishareHeader"
+    data-sly-use.header="${'com.anishare.core.models.AniShareHeader' @ renditonName = 'cq5dam.thumbnail.48.48.png'}"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${!header.empty}"
+    class="header-logo anishareHeader"
   >
     <div>
       <img src="${header.imageRendition}" alt="${header.altText}" />
     </div>
 
-    <div
-            data-sly-list.seasons="${header.seasons}"
-            class="anishareHeader__seasons__oneSeason"
-    >
+    <div data-sly-list.seasons="${header.seasons}" class="d-flex">
       <div
-              data-sly-list.oneSeason="${seasons}"
-              class="anishareHeader__seasons__text"
+        data-sly-list.oneSeason="${seasons}"
+        class="anishareHeader__seasons__text"
       >
         <div>${oneSeason}</div>
       </div>
@@ -43,5 +40,5 @@
   </div>
 </div>
 <sly
-        data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}"
+  data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}"
 />

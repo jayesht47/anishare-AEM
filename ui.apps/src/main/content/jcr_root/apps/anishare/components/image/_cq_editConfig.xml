@@ -10,9 +10,9 @@
             <parameters
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="anishare/components/image"
-                imageCrop="\0"
-                imageMap="\0"
-                imageRotate="\0"/>
+                imageCrop=""
+                imageMap=""
+                imageRotate=""/>
         </image>
     </cq:dropTargets>
     <cq:inplaceEditing

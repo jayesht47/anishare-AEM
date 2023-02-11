@@ -72,12 +72,18 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/container">
                                                             <items jcr:primaryType="nt:unstructured">
-                                                                <text
+                                                                <seasonName
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                    fieldDescription="year and season of anime"
-                                                                    fieldLabel="Year and Season of Anime"
-                                                                    name="./yearAndSeason"/>
+                                                                    fieldDescription="please enter season name"
+                                                                    fieldLabel="Season of Anime"
+                                                                    name="./seasonName"/>
+                                                                <seasonYear
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="please enter year of the season"
+                                                                    fieldLabel="Season year"
+                                                                    name="./seasonYear"/>
                                                             </items>
                                                         </column>
                                                     </items>
